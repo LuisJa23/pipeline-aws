@@ -3,14 +3,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18   # Usa Node.js 16 (o la versión que necesites)
+      nodejs: 18
     commands:
       - echo "Instalando dependencias..."
       - npm install
-  
+
   build:
     commands:
-      - echo "Build completado!"
+      - echo "Compilando proyecto..."
+      - npm run build   # Asegúrate de tener este script en tu package.json
+
   post_build:
     commands:
-      - echo "Pipeline ejecutado con éxito en `date`"
+      - echo "Pipeline ejecutado con éxito en $(date)"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist   # Cambia "dist" si tus archivos resultantes están en otra carpeta
