@@ -11,7 +11,8 @@ phases:
   build:
     commands:
       - echo "Compilando proyecto..."
-      - npm run build   # Asegúrate de tener este script en tu package.json
+      - mkdir -p dist  # Crea el directorio dist si no existe
+      - npm run build   # Ejecuta el build (asegúrate de tener este script en package.json)
 
   post_build:
     commands:
@@ -20,4 +21,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: dist   # Cambia "dist" si tus archivos resultantes están en otra carpeta
+  base-directory: dist
