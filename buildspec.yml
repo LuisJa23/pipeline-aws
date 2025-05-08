@@ -11,11 +11,8 @@ phases:
   build:
     commands:
       - echo "Compilando proyecto..."
-      - mkdir -p dist
-      # Genera archivos mínimos requeridos para el artefacto
-      - echo "Build generado el $(date)" > dist/build-info.txt
-      - cp -r src/* dist/ 2>/dev/null || echo "No hay archivos src para copiar"
-      - npm run build
+      # Genera la carpeta dist (si tu build lo requiere)
+      - npm run build  # Ejemplo: Si usas TypeScript o herramientas de bundling
 
   post_build:
     commands:
@@ -23,5 +20,6 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: dist
+    - '**/*'           # Incluir todos los archivos
+  base-directory: .    # No usar "dist" (a menos que tu build lo justifique)
+  discard-paths: no
