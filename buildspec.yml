@@ -11,8 +11,11 @@ phases:
   build:
     commands:
       - echo "Compilando proyecto..."
-      - mkdir -p dist  # Crea el directorio dist si no existe
-      - npm run build   # Ejecuta el build (asegúrate de tener este script en package.json)
+      - mkdir -p dist
+      # Genera archivos mínimos requeridos para el artefacto
+      - echo "Build generado el $(date)" > dist/build-info.txt
+      - cp -r src/* dist/ 2>/dev/null || echo "No hay archivos src para copiar"
+      - npm run build
 
   post_build:
     commands:
