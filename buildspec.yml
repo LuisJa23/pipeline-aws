@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 10.9.2    # Usa Node.js 16 (o la versión que necesites)
+      nodejs: 18   # Usa Node.js 16 (o la versión que necesites)
     commands:
       - echo "Instalando dependencias..."
       - npm install
