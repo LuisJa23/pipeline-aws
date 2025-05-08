@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10.9.2    # Usa Node.js 16 (o la versión que necesites)
+    commands:
+      - echo "Instalando dependencias..."
+      - npm install
+  pre_build:
+    commands:
+      - echo "Ejecutando pruebas..."
+      - npm test
+  build:
+    commands:
+      - echo "Build completado!"
+  post_build:
+    commands:
+      - echo "Pipeline ejecutado con éxito en `date`"
