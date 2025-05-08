@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/index.test.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build": "echo 'No hay compilación que realizar, pero evitamos que falle el pipeline.'"
+
   },
   "keywords": [],
   "author": "",
